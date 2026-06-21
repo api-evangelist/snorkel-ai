@@ -1,0 +1,67 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Snorkel AI
+providerId: snorkel-ai
+created: '2026-06-21'
+modified: '2026-06-21'
+reconciled: false
+tags:
+- AI
+- Data Development
+- Programmatic Labeling
+- Weak Supervision
+- SDK
+- Rate Limiting
+- Quotas
+- Throttling
+description: >-
+  Snorkel Flow is an enterprise platform accessed through the snorkelflow
+  Python SDK against a customer's own per-instance deployment, not a shared
+  public API gateway. Snorkel does not publish public rate-limit, RPM/TPM, or
+  quota documentation; throughput and concurrency are governed by the
+  provisioned instance size, compute resources, and the negotiated enterprise
+  agreement rather than a standardized public limit. The open-source snorkel
+  library runs locally and has no network rate limits. No specific limit values
+  are reconciled in this artifact.
+notes: >-
+  Verify any per-instance concurrency, job, or compute limits with Snorkel and
+  your deployment configuration during reconciliation. There is no public
+  per-account rate-limit reference to cite.
+sources:
+- https://docs.snorkel.ai/docs/25.3/user-guide/sdk/
+- https://snorkel.ai/snorkel-flow/
+responseCodes:
+  throttled: 429
+limits:
+- name: SDK / REST Requests
+  scope: instance
+  metric: requests
+  limit: see provider documentation
+  notes: >-
+    Governed by the provisioned Snorkel Flow instance and enterprise agreement;
+    no public per-account RPM/TPM published.
+- name: Concurrent Jobs
+  scope: instance
+  metric: jobs
+  limit: see provider documentation
+  notes: >-
+    Training, labeling, and evaluation job concurrency depends on instance
+    compute resources.
+- name: Open-Source Library
+  scope: local
+  metric: usage
+  limit: not applicable
+  notes: Runs as a local Python dependency; no network rate limits apply.
+policies:
+- name: Instance-Governed Limits
+  description: >-
+    Throughput and concurrency follow the provisioned Snorkel Flow deployment
+    and negotiated enterprise terms rather than a fixed public limit.
+- name: Backoff Strategy
+  description: >-
+    SDK clients should implement exponential backoff with jitter and honor
+    Retry-After on any 429 returned by the instance REST API.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

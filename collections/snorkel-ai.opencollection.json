@@ -1,0 +1,20 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Snorkel Flow Platform API",
+    "version": "25.3",
+    "description": "Snorkel Flow is driven by the snorkelflow Python SDK against a customer's per-instance REST API (https://<your-snorkel-hostname>), authenticated with a per-user API key via SnorkelFlowContext. Snorkel does not publish a public hosted base URL or an endpoint-level REST reference, so no public HTTP operations are enumerated here to avoid fabrication. Use the Python SDK for datasets, applications, labeling functions, model training, and evaluation. The open-source snorkel library is a local Python dependency, not a network API."
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "apikey": {
+        "key": "Authorization",
+        "value": "{{snorkelApiKey}}",
+        "in": "header"
+      }
+    }
+  },
+  "items": [],
+  "bundled": true
+}

@@ -1,0 +1,112 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Snorkel AI
+providerId: snorkel-ai
+created: '2026-06-21'
+modified: '2026-06-21'
+reconciled: false
+tags:
+- AI
+- Data Development
+- Programmatic Labeling
+- Weak Supervision
+- Evaluation
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of Snorkel AI spend. Snorkel's commercial model is sales-led and
+  contract-based rather than metered per-API-call: the enterprise Snorkel Flow
+  platform and Snorkel Expert Data-as-a-Service are negotiated annual / per-
+  engagement agreements, scaling by users, data volume, deployment model, and
+  professional services. The open-source snorkel library is free. There is no
+  public usage-based price list, so cost allocation centers on contract value,
+  seats, and provisioned instance / compute footprint rather than per-token or
+  per-request meters.
+notes: >-
+  Per-engagement and per-instance costs are negotiated and not publicly
+  metered; reconcile against the order form, instance sizing, and any
+  cloud/compute pass-through during a FinOps review.
+sources:
+- https://snorkel.ai/snorkel-flow/
+- https://snorkel.ai/expert-data-as-a-service/
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Snorkel AI
+serviceCategory: AI and Machine Learning
+billingModel:
+  pricingCategory: Commitment-Based
+  billingFrequency: Annual
+  billingCurrency: USD
+  chargeCategories:
+  - Purchase
+  - Usage
+  - Adjustment
+focusColumns:
+  ServiceName: Snorkel Flow
+  ServiceCategory: AI and Machine Learning
+  ProviderName: Snorkel AI
+  PublisherName: Snorkel AI
+  InvoiceIssuerName: Snorkel AI
+  BillingCurrency: USD
+  ChargeCategory: Purchase
+  PricingCategory: Commitment-Based
+meters:
+- name: platform_subscription
+  description: Annual Snorkel Flow platform subscription / commitment value.
+  unit: contract
+  aggregation: sum
+  dimensions:
+  - account
+  - deployment
+- name: seats
+  description: Licensed platform users / seats included in the agreement.
+  unit: users
+  aggregation: sum
+  dimensions:
+  - account
+- name: instance_compute
+  description: >-
+    Provisioned Snorkel Flow instance compute footprint backing labeling,
+    training, and evaluation workloads.
+  unit: compute
+  aggregation: sum
+  dimensions:
+  - account
+  - deployment
+- name: expert_data_engagement
+  description: >-
+    Snorkel Expert Data-as-a-Service custom dataset / benchmark engagement
+    value, scoped per project.
+  unit: engagement
+  aggregation: sum
+  dimensions:
+  - account
+  - project
+principles:
+- name: Visibility
+  description: >-
+    Track contract value, seat counts, and provisioned instance footprint;
+    there are no public per-call meters to export.
+- name: Allocation
+  description: >-
+    Map seats, projects, and expert-data engagements to internal teams and
+    cost centers.
+- name: Optimization
+  description: >-
+    Right-size seats and instance compute to actual usage; use the free
+    open-source snorkel library for workloads that do not require the platform;
+    scope expert-data engagements tightly.
+- name: Accountability
+  description: >-
+    Assign owners per platform project and per expert-data engagement; review
+    contract utilization against budget on the renewal cycle.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

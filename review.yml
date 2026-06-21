@@ -1,0 +1,84 @@
+aid: snorkel-ai
+name: Snorkel AI
+review:
+  question: Does Snorkel AI expose a documented public REST or WebSocket API?
+  answer: false
+  date: '2026-06-21'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was created. Snorkel AI does not document any public
+    streaming, Server-Sent Events, or WebSocket surface. The platform is an
+    enterprise SDK-driven product with no documented realtime or event-driven
+    API, so there is nothing in scope for AsyncAPI modeling.
+findings:
+  summary: |
+    Snorkel AI's developer surface is the snorkelflow Python SDK, not a public
+    hosted REST API. The SDK's snorkelflow.client module is documented as
+    "Interfaces to interact with the Snorkel Flow REST API", confirming a REST
+    surface exists - but it is served by each customer's own Snorkel Flow
+    deployment at a per-instance hostname (https://<your-snorkel-hostname>) and
+    authenticated with a per-user API key via SnorkelFlowContext. Snorkel does
+    not publish a single shared public base URL, an endpoint-level REST
+    reference, or an OpenAPI definition. The contract developers program against
+    is the SDK (datasets, applications, operators, labeling functions, model
+    training, evaluation), and enumerated HTTP paths are not publicly documented.
+    Separately, the open-source snorkel library (Apache-2.0) is a local Python
+    dependency for weak supervision, not a network API. Commercial access to
+    Snorkel Flow and Expert Data-as-a-Service is sales-led with custom contracts.
+  transports:
+    - protocol: SDK
+      scheme: python
+      note: snorkelflow Python SDK is the primary, documented developer interface to the platform.
+      documented: true
+    - protocol: REST
+      scheme: https
+      baseURL: https://<your-snorkel-hostname>
+      documented: false
+      note: >-
+        A per-instance REST API exists behind the SDK (snorkelflow.client), but
+        there is no public shared base URL and no public endpoint-level
+        reference. Not a publicly documented REST surface.
+    - protocol: SSE
+      scheme: https
+      documented: false
+      note: No Server-Sent Events streaming surface is documented.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented for any Snorkel product.
+  interfaceType: Python SDK over per-instance REST API
+  endpointsConfirmedRest: []
+  openSource:
+    library: snorkel
+    license: Apache-2.0
+    repo: https://github.com/snorkel-team/snorkel
+    note: >-
+      Free open-source weak-supervision library imported locally; not a hosted
+      network API.
+sources:
+  - url: https://docs.snorkel.ai/docs/0.95/sdk/
+    type: APIReference
+    note: >-
+      Lists snorkelflow modules; snorkelflow.client is described as interfaces
+      to interact with the Snorkel Flow REST API.
+  - url: https://docs.snorkel.ai/docs/25.3/user-guide/sdk/quick_start
+    type: Documentation
+    note: >-
+      SDK quickstart; connects via SnorkelFlowContext to a per-instance endpoint
+      with an API key. No public hosted base URL.
+  - url: https://github.com/snorkel-team/snorkel
+    type: GitHub
+    note: Open-source snorkel library (Apache-2.0); local Python dependency, not a network API.
+  - url: https://snorkel.ai/snorkel-flow/
+    type: Documentation
+    note: Enterprise platform overview; sales-led, no public pricing or public API catalog.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No public REST endpoint catalog and no WebSocket/SSE surface exist, so no
+    OpenAPI paths or AsyncAPI document were fabricated. The OpenAPI file uses
+    paths: {} with an accurate description of the SDK-over-per-instance-REST
+    interface, and apis.yml documents the SDK / platform, programmatic labeling,
+    evaluation, and the open-source library with honest interface types.

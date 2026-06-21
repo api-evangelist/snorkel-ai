@@ -1,0 +1,119 @@
+aid: snorkel-ai
+url: https://raw.githubusercontent.com/api-evangelist/snorkel-ai/refs/heads/main/apis.yml
+name: Snorkel AI
+kind: company
+description: Snorkel AI is a data-development / AI data platform built on the open-source
+  Snorkel weak-supervision library. The enterprise Snorkel Flow platform supports
+  programmatic labeling, data curation, model training, and evaluation, and is driven
+  programmatically through a Python SDK that targets a per-instance REST API rather
+  than a single public hosted endpoint. Snorkel also delivers Expert Data-as-a-Service
+  for frontier-model training and evaluation data.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- AI
+- Data Development
+- Programmatic Labeling
+- Weak Supervision
+- Evaluation
+- SDK
+created: '2026-06-21'
+modified: '2026-06-21'
+specificationVersion: '0.19'
+apis:
+- aid: snorkel-ai:snorkel-flow-sdk-platform
+  name: Snorkel Flow SDK / Platform
+  tags:
+  - SDK
+  - Platform
+  - Data Development
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.snorkel.ai/docs/25.3/user-guide/sdk/quick_start
+  properties:
+  - url: https://docs.snorkel.ai/docs/25.3/user-guide/sdk/
+    type: Documentation
+  - url: https://docs.snorkel.ai/docs/0.95/sdk/
+    type: APIReference
+  - url: openapi/snorkel-ai-openapi.yml
+    type: OpenAPI
+  description: The Snorkel Flow Python SDK (snorkelflow) drives the platform programmatically,
+    connecting to a customer's Snorkel Flow instance via SnorkelFlowContext and an
+    API key. The snorkelflow.client module wraps the instance's REST API; there is
+    no single public hosted base URL - each deployment exposes its own per-instance
+    endpoint (https://<your-snorkel-hostname>). Covers datasets, applications,
+    operators, labeling functions, model training, and evaluation.
+- aid: snorkel-ai:programmatic-labeling
+  name: Programmatic Labeling
+  tags:
+  - Programmatic Labeling
+  - Labeling Functions
+  - Weak Supervision
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.snorkel.ai/docs/0.95/sdk/
+  properties:
+  - url: https://docs.snorkel.ai/docs/0.93/user-guide/overview/key-concepts/
+    type: Documentation
+  - url: https://docs.snorkel.ai/docs/0.95/sdk/
+    type: APIReference
+  - url: openapi/snorkel-ai-openapi.yml
+    type: OpenAPI
+  description: SDK surface (snorkelflow.studio, snorkelflow.lfs, snorkelflow.operators,
+    snorkelflow.templates) for authoring code-based and template-based labeling
+    functions, transformation and slicing functions, and combining them with a label
+    model to programmatically generate training data via weak supervision.
+- aid: snorkel-ai:evaluation
+  name: Evaluation
+  tags:
+  - Evaluation
+  - Benchmarks
+  - Error Analysis
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://snorkel.ai/
+  properties:
+  - url: https://docs.snorkel.ai/docs/25.3/user-guide/sdk/
+    type: Documentation
+  - url: https://docs.snorkel.ai/docs/0.95/sdk/
+    type: APIReference
+  - url: openapi/snorkel-ai-openapi.yml
+    type: OpenAPI
+  description: Platform and SDK capabilities for assessing model performance across
+    data splits, running error and slice analysis, and building expert-curated
+    benchmarks. Largely delivered in-platform and through the SDK against a customer's
+    Snorkel Flow instance rather than a public REST endpoint.
+- aid: snorkel-ai:open-source-snorkel-library
+  name: Open-Source Snorkel Library
+  tags:
+  - Open Source
+  - Python Library
+  - Weak Supervision
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://github.com/snorkel-team/snorkel
+  properties:
+  - url: https://www.snorkel.org/
+    type: Documentation
+  - url: https://snorkel.readthedocs.io/
+    type: APIReference
+  - url: https://github.com/snorkel-team/snorkel
+    type: GitHub
+  description: The free, open-source snorkel Python library (Apache-2.0) for
+    programmatically building and managing training data with weak supervision -
+    labeling functions, the LabelModel, transformation functions, and slicing
+    functions. Imported as a local Python dependency (pip install snorkel); not a
+    hosted network API.
+common:
+- type: GitHubOrganization
+  url: https://github.com/snorkel-team
+- type: LinkedIn
+  url: https://www.linkedin.com/company/snorkel-ai
+- type: Website
+  url: https://snorkel.ai
+- type: Documentation
+  url: https://docs.snorkel.ai
+- type: Plans
+  url: plans/snorkel-ai-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/snorkel-ai-rate-limits.yml
+- type: FinOps
+  url: finops/snorkel-ai-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

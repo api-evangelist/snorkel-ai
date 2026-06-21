@@ -1,0 +1,105 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Snorkel AI
+providerId: snorkel-ai
+created: '2026-06-21'
+modified: '2026-06-21'
+reconciled: false
+tags:
+- AI
+- Data Development
+- Programmatic Labeling
+- Weak Supervision
+- Evaluation
+- SDK
+- Plans
+description: >-
+  Snorkel AI operates a split model: the open-source snorkel Python library is
+  free (Apache-2.0), while the enterprise Snorkel Flow platform and Snorkel
+  Expert Data-as-a-Service are sales-led with custom, negotiated contracts and
+  no public price list. Public third-party estimates put enterprise entry in the
+  low-to-mid five figures and up per year (industry references cite figures such
+  as ~$50K/year and a $60K 12-month hosted-unit contract), scaling by users,
+  data volume, deployment model, and professional services. These figures are
+  not confirmed by Snorkel and are unreconciled.
+notes: >-
+  Pricing is not published by Snorkel; enterprise pricing requires contacting
+  sales. Reconcile against an official quote or order form. Open-source library
+  pricing (free) is the only firm, verifiable data point.
+sources:
+- https://snorkel.ai/snorkel-flow/
+- https://snorkel.ai/expert-data-as-a-service/
+- https://github.com/snorkel-team/snorkel
+plans:
+- id: snorkel-open-source
+  name: Open-Source Snorkel Library
+  type: free
+  description: >-
+    The free, Apache-2.0 snorkel Python library for programmatic labeling and
+    weak supervision, installed locally via pip. No account, no usage billing.
+  entries:
+  - label: Open-Source Library
+    name: open_source
+    type: free
+    metric: usage
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: free (Apache-2.0)
+    userMultiplied: false
+  elements:
+  - name: Labeling Functions
+  - name: LabelModel
+  - name: Transformation Functions
+  - name: Slicing Functions
+- id: snorkel-flow-enterprise
+  name: Snorkel Flow Enterprise
+  type: enterprise
+  description: >-
+    Sales-led enterprise platform for programmatic labeling, data curation,
+    model training, and evaluation, driven via the Python SDK against a hosted
+    or self-managed Snorkel Flow instance. Custom negotiated pricing.
+  entries:
+  - label: Enterprise Agreement
+    name: enterprise
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales (custom; third-party estimates ~$50K+/year, unconfirmed)
+    userMultiplied: false
+  elements:
+  - name: Snorkel Flow Platform
+  - name: Python SDK Access
+  - name: Programmatic Labeling
+  - name: Model Training
+  - name: Evaluation
+- id: snorkel-expert-data
+  name: Snorkel Expert Data-as-a-Service
+  type: enterprise
+  description: >-
+    White-glove, sales-led service delivering custom, expert-curated datasets
+    for training and evaluating frontier AI models. Scoped and priced per
+    engagement.
+  entries:
+  - label: Expert Data Engagement
+    name: expert_data
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales (custom per engagement)
+    userMultiplied: false
+  elements:
+  - name: Custom Dataset Construction
+  - name: Expert Contributor Network
+  - name: Benchmark Development
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
