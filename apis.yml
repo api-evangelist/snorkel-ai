@@ -100,6 +100,14 @@ apis:
     functions. Imported as a local Python dependency (pip install snorkel); not a
     hosted network API.
 common:
+- type: TrustCenter
+  url: security/snorkel-ai-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/snorkel-ai-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/snorkel-ai-domain-security.yml
+- type: Authentication
+  url: authentication/snorkel-ai-authentication.yml
 - type: GitHubOrganization
   url: https://github.com/snorkel-team
 - type: LinkedIn
@@ -114,6 +122,8 @@ common:
   url: rate-limits/snorkel-ai-rate-limits.yml
 - type: FinOps
   url: finops/snorkel-ai-finops.yml
+- url: https://snorkel.ai/feed/
+  type: Blog
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

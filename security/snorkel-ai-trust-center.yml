@@ -1,0 +1,15 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://security.snorkel.ai/
+url: https://security.snorkel.ai/
+certifications:
+- SOC 2
+- HIPAA
+evidence:
+- source: https://security.snorkel.ai/
+  keywords:
+  - soc 2
+  - soc2
+  - hipaa
+  - trust center

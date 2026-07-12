@@ -1,0 +1,17 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/snorkel-ai-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: apiKey
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: Snorkel Flow API key supplied to the SDK via SnorkelFlowContext. Keys are per-user
+    and may be rotated by the platform on re-authentication.
+  sources:
+  - openapi/snorkel-ai-openapi.yml
