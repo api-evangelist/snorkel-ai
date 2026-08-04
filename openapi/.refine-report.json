@@ -1,0 +1,14 @@
+{
+  "provider": "snorkel-ai",
+  "sources": [
+    "snorkel-ai-openapi.yml"
+  ],
+  "outputs": [],
+  "archived": [
+    "archived snorkel-ai-openapi.yml"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
