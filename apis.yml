@@ -46,7 +46,7 @@ apis:
     type: Documentation
   - url: https://docs.snorkel.ai/docs/0.95/sdk/
     type: APIReference
-  - url: openapi/snorkel-ai-openapi.yml
+  - url: openapi/_original/snorkel-ai-openapi.yml
     type: OpenAPI
   description: The Snorkel Flow Python SDK (snorkelflow) drives the platform programmatically,
     connecting to a customer's Snorkel Flow instance via SnorkelFlowContext and an
@@ -67,7 +67,7 @@ apis:
     type: Documentation
   - url: https://docs.snorkel.ai/docs/0.95/sdk/
     type: APIReference
-  - url: openapi/snorkel-ai-openapi.yml
+  - url: openapi/_original/snorkel-ai-openapi.yml
     type: OpenAPI
   description: SDK surface (snorkelflow.studio, snorkelflow.lfs, snorkelflow.operators,
     snorkelflow.templates) for authoring code-based and template-based labeling
@@ -86,7 +86,7 @@ apis:
     type: Documentation
   - url: https://docs.snorkel.ai/docs/0.95/sdk/
     type: APIReference
-  - url: openapi/snorkel-ai-openapi.yml
+  - url: openapi/_original/snorkel-ai-openapi.yml
     type: OpenAPI
   description: Platform and SDK capabilities for assessing model performance across
     data splits, running error and slice analysis, and building expert-curated
