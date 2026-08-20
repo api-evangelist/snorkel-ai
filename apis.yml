@@ -23,6 +23,13 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/snorkel-ai.png
 tags:
+- Artificial Intelligence
+- Data Development
+- Programmatic Labeling
+- Weak Supervision
+- Evaluation
+- SDK
+tags_raw:
 - AI
 - Data Development
 - Programmatic Labeling
@@ -95,6 +102,10 @@ apis:
 - aid: snorkel-ai:open-source-snorkel-library
   name: Open-Source Snorkel Library
   tags:
+  - Open-Source
+  - Python Library
+  - Weak Supervision
+  tags_raw:
   - Open Source
   - Python Library
   - Weak Supervision
