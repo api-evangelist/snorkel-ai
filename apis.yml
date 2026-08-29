@@ -8,6 +8,17 @@ description: Snorkel AI is a data-development / AI data platform built on the op
   programmatically through a Python SDK that targets a per-instance REST API rather
   than a single public hosted endpoint. Snorkel also delivers Expert Data-as-a-Service
   for frontier-model training and evaluation data.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
