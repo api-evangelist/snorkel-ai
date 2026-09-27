@@ -10,14 +10,18 @@ description: Snorkel AI is a data-development / AI data platform built on the op
   for frontier-model training and evaluation data.
 deliveryModel:
   model: saas
-  open_source: false
+  license_evidence:
+    not_product:
+    - snorkel-team/snorkel
+  open_source: unknown
   commercial: true
   callable_host: false
   label: Hosted service · you call their endpoint
-  confidence: medium
+  confidence: low
   source:
   - pricing
-  generated: '2026-08-28'
+  - repository-not-product
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: freemium
@@ -114,13 +118,14 @@ apis:
 - aid: snorkel-ai:open-source-snorkel-library
   name: Open-Source Snorkel Library
   tags:
-  - Open-Source
+  - Open Source
   - Python Library
   - Weak Supervision
   tags_raw:
   - Open Source
   - Python Library
   - Weak Supervision
+  - Open-Source
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://github.com/snorkel-team/snorkel
   properties:
