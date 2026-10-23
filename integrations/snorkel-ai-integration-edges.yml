@@ -2,6 +2,7 @@ generated: '2026-10-13'
 method: searched
 checked:
 - https://azuremarketplace.microsoft.com/
+- hugging-face/integrations/hugging-face-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: Microsoft Azure Marketplace
@@ -19,3 +20,41 @@ edges:
   seller_name: Snorkel AI
   detected_by: sweep-cloud-marketplaces.py
   detected: '2026-10-13'
+- partner_name: Hugging Face (hugging-face-hub)
+  partner: hugging-face
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: hugging-face-hub
+  evidence: https://huggingface.co/snorkelai
+  mirror_of: hugging-face/integrations/hugging-face-integration-edges.yml
+  apps:
+  - snorkelai/finqa-data
+  - snorkelai/Multi-Turn-Insurance-Underwriting
+  - snorkelai/agent-finance-reasoning
+  - snorkelai/Tau2-Bench-Verified-Airline-With-Code-Agents
+  - snorkelai/Tau2-Bench-Airline-With-Code-Agents
+  - snorkelai/Snorkel-Mistral-PairRM-DPO-Dataset
+  - snorkelai/Multi-Turn-Insurance-Underwriting-Code-Gen
+  - snorkelai/snorkel-curated-instruction-tuning
+  - snorkelai/Snorkel-Mistral-PairRM-DPO
+  - snorkelai/RedPajama-7B-Chat-Curated
+  - snorkelai/falcon-7b-instruct-pytorch_2.0.0
+  - snorkelai/Mixtral-8x7B-Instruct-v0.1
+  - snorkelai/falcon-7b-instruct-pytorch200
+  - snorkelai/sdnet
+  - snorkelai/Mistral-7B-Instruct-v0.2
+  - snorkelai/med-flan-t5-large
+  - snorkelai/finqa-env
+  - snorkelai/snorkelai_mistral_pairrm_dpo_text_inference
+  listing_count: 3
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Hugging Face Hub datasets
+  badges:
+  - Verified publisher (Hugging Face verified organisation)
+source:
+- hugging-face/integrations/hugging-face-integration-edges.yml
